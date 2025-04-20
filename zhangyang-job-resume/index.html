@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="张洋 - 针对性求职简历。8年经验前端工程师，精通React/Vue，注重性能与用户体验。">
+    <title>张洋 - 前端工程师求职简历 (目标职位优化版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 模仿 Mizhi 风格: 简洁、专业、蓝色调 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+            background-color: #f8fafc; /* 类似 Mizhi 的浅灰色背景 */
+        }
+        h1, h2, h3 {
+            color: #1e3a8a; /* 深蓝色标题 */
+        }
+        h2 {
+            border-bottom: 2px solid #bfdbfe; /* 浅蓝色下边框 */
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        h3 {
+            color: #1d4ed8; /* 中蓝色副标题 */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        hr {
+            border-top: 1px dashed #93c5fd; /* 蓝色虚线分隔 */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+         /* 强调与岗位匹配的技能 */
+        .skill-highlight code {
+            background-color: #dbeafe; /* 浅蓝色背景 */
+            color: #1e40af; /* 深蓝色文字 */
+            font-weight: 600;
+        }
+        code {
+            background-color: #eef2ff; /* 更柔和的背景色 */
+            font-size: 0.875rem;
+            padding: 0.125rem 0.3rem;
+            border-radius: 0.25rem;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            color: #4338ca; /* 紫蓝色调代码 */
+        }
+        .job-title {
+            color: #1e3a8a;
+        }
+        .company-name {
+            color: #64748b;
+        }
+        .project-card {
+            border: 1px solid #e0e7ff;
+            background-color: #fff;
+            transition: box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        /* 打印样式优化 */
+        @media print {
+            body {
+                font-size: 10pt;
+                margin: 0;
+                padding: 0;
+                background-color: white !important;
+                color: black !important;
+            }
+            h1, h2, h3, h4, h5, h6, p, ul, li, strong, code {
+                page-break-inside: avoid;
+                color: black !important; 
+            }
+            h2 { border-bottom: 1px solid black !important; }
+            hr { border-color: black !important; border-style: solid; }
+            a { color: black !important; text-decoration: none; }
+            .no-print, footer { display: none; }
+            .project-card { border: 1px solid black !important; box-shadow: none !important; background-color: white !important; }
+            /* 移除不必要的背景色和强调色 */
+            body, .bg-white, .bg-gray-100, code, .skill-highlight code, .bg-indigo-50 {
+                 background-color: white !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <div class="container mx-auto p-4 md:p-8 lg:p-12 max-w-4xl bg-white shadow-lg rounded-lg my-8">
+
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">张洋 - 高级前端工程师</h1>
+            <!-- 摘要强化与岗位匹配 -->
+            <p class="text-lg text-blue-700">8年 Web 前端开发经验 | 精通 <code>React</code> & <code>Vue</code> | 卓越用户体验 & 页面性能优化专家</p>
+        </header>
+
+        <hr />
+
+        <section id="personal-info" class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">个人信息</h2>
+            <ul class="list-none pl-0 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-gray-700">
+                <li><strong>姓名:</strong> 张洋</li>
+                <li><strong>电话:</strong> 138-xxxx-xxxx （请替换）</li>
+                <li><strong>邮箱:</strong> zhangyang@email.com （请替换）</li>
+                <li><strong>经验:</strong> 8年 Web 前端开发</li>
+                <li><strong>学历:</strong> 河南农业大学 | 计算机科学与技术 | 本科</li>
+                 <li><strong>期望地点:</strong> (例如：北京 / 上海 / 远程)</li>
+                <!-- 可选信息靠后 -->
+                 <li><strong>(可选) GitHub:</strong> github.com/yourusername</li>
+                <li><strong>(可选) 技术博客:</strong> yourwebsite.com</li>
+            </ul>
+        </section>
+
+        <hr />
+
+        <section id="skills" class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">专业技能</h2>
+             <!-- 优先展示岗位核心要求 -->
+            <div class="mb-4 bg-indigo-50 p-3 rounded">
+                <h3 class="text-xl font-semibold mb-2 text-blue-800">核心技能 (与目标岗位高度匹配)</h3>
+                <ul class="list-disc pl-5 space-y-1 skill-highlight">
+                    <li>精通 <code>HTML5</code>, <code>CSS3</code>, <code>JavaScript (ES6+)</code> 及 <code>TypeScript</code>，具备扎实的 Web 基础。</li>
+                    <li>熟练掌握 <code>响应式布局 (Flexbox/Grid)</code> 和 <code>移动端适配</code> 方案，确保跨设备兼容性。</li>
+                    <li>精通主流前端框架 <code>React</code> (Hooks, Redux/Zustand) 及 <code>Vue.js</code> (Vue 3, Composition API, Pinia)，具备独立开发复杂前端项目的能力。</li>
+                    <li>深刻理解并践行 <code>前端性能优化</code>、<code>Web 可访问性 (Accessibility)</code> 和 <code>代码可维护性</code> 最佳实践。</li>
+                     <li>具备良好的 <code>编码习惯</code>，熟练使用 <code>ESLint</code>, <code>Prettier</code> 等代码规范工具。</li>
+                     <li>优秀的 <code>沟通能力</code> 和 <code>团队协作精神</code>，能够与后端工程师及团队成员高效协作。</li>
+                </ul>
+            </div>
+            <div class="mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-blue-800">其他相关技能</h3>
+                 <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                    <li>熟悉 <code>Node.js</code> 及 <code>Express/Koa</code>，有 <code>RESTful API</code> 开发和 <code>SSR/SSG (Next.js/Nuxt.js)</code> 经验。</li>
+                    <li>熟练掌握现代前端构建工具 <code>Webpack</code>, <code>Vite</code>，具备构建优化经验。</li>
+                    <li>精通版本控制工具 <code>Git</code> 及 <code>Git Flow</code> 等协作流程。</li>
+                    <li>熟悉前端测试框架 <code>Jest/Vitest</code>, <code>Cypress/Playwright</code>。</li>
+                    <li>了解 <code>HTTP/HTTPS</code> 协议，熟悉 <code>Sass/Less</code> 等 CSS 预处理器。</li>
+                    <li>熟悉 <code>ECharts</code>, <code>AntV</code> 等数据可视化库。</li>
+                    <li>了解 <code>Docker</code> 容器化技术及 <code>敏捷开发</code> 流程。</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr />
+
+        <section id="experience" class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">工作经历</h2>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold job-title">高级前端工程师 | XXX 科技有限公司</h3>
+                <p class="text-sm text-gray-500 mb-2">2019年 月 - 至今</p>
+                <div class="mb-2">
+                    <strong class="block mb-1 text-blue-700">职责 (紧密围绕岗位要求):</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>负责核心产品线的 <code>Web 前端页面设计与实现</code>，高度关注页面美观性与用户体验。</li>
+                        <li>独立承担复杂模块开发，使用 <code>React/Vue</code> 等框架高效构建用户界面。</li>
+                        <li>与后端工程师紧密配合，<code>完成数据交互</code>、接口联调及动态页面效果实现。</li>
+                        <li>主导前端性能优化工作，通过代码优化、资源加载策略调整等手段，<code>显著提升页面加载速度和运行时性能</code>。</li>
+                        <li>处理浏览器 <code>兼容性</code> 问题，实施 <code>响应式设计</code> 与 <code>移动端适配</code>，确保跨平台一致体验。</li>
+                        <li>推动团队前端工程化建设 (如引入 <code>Vite</code>)，制定并执行代码规范，组织 <code>Code Review</code>。</li>
+                        <li>指导初级工程师，进行技术分享，促进团队技术成长（体现团队协作）。</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="block mb-1 text-blue-700">主要成就 (突出相关性):</strong>
+                     <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>主导在线教育平台前端重构 (<code>React Hooks</code> + <code>TypeScript</code>)，首屏加载时间优化 **XX%**，显著提升用户体验。</li>
+                        <li>引入 <code>Cypress</code> 进行端到端测试，测试覆盖率提升至90%，有效保障页面质量和功能稳定性。</li>
+                        <li>负责公共组件库（React/Vue）的设计与开发，包含10+高质量业务组件，提升团队开发效率和代码可维护性。</li>
+                        <li>解决了 [某个与性能或兼容性相关的具体技术难题]，保障了核心功能的稳定。</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="mb-6">
+                <h3 class="text-xl font-semibold job-title">前端工程师 | YYY 信息技术有限公司</h3>
+                <p class="text-sm text-gray-500 mb-2">2016年 月 - 2019年 月</p>
+                 <div class="mb-2">
+                    <strong class="block mb-1 text-blue-700">职责:</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>参与 CRM 系统/数据可视化平台的前端开发，使用 <code>Vue.js</code> 全家桶负责模块设计与实现。</li>
+                        <li>实现前端页面效果，与后端工程师协作完成数据交互。</li>
+                        <li>进行日常维护、Bug 修复和基础性能优化工作。</li>
+                         <li>遵循团队代码规范，编写技术文档。</li>
+                    </ul>
+                 </div>
+                <div>
+                    <strong class="block mb-1 text-blue-700">主要成就:</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                        <li>独立负责 [具体模块名称] 的前端开发，按时高质量交付。</li>
+                        <li>优化 [某个功能/页面] 的加载性能，响应时间缩短 **XX** 毫秒。</li>
+                         <li>参与维护基于 <code>Element UI</code> 的内部组件库。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+         <section id="projects" class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">相关项目经验</h2>
+             <!-- 优先展示与Web页面、React/Vue、性能优化相关的项目 -->
+            <div class="mb-6 p-4 border rounded-lg project-card">
+                <h3 class="text-xl font-semibold mb-1 text-blue-800">项目一：大型在线零售平台前端重构 (React)</h3>
+                <p class="mb-2 text-sm"><strong>项目描述:</strong> 对现有的大型在线零售平台进行全面的前端现代化重构，以提升用户体验、网站性能和开发效率。</p>
+                <p class="mb-2 text-sm"><strong>技术栈:</strong> <code>React 17/18</code>, <code>Redux Toolkit</code>, <code>TypeScript</code>, <code>Next.js (SSR/ISR)</code>, <code>Styled-Components</code>, <code>Webpack 5</code>, <code>Jest</code>, <code>Cypress</code></p>
+                <div class="mb-2">
+                    <strong class="block mb-1 text-blue-700">我的职责 (突出 Web 页面实现、性能、框架应用):</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                        <li>担任前端技术负责人，主导技术选型 (<code>React</code>) 与架构设计。</li>
+                        <li>负责核心页面模块的开发，使用 <code>React Hooks</code> 构建交互复杂的组件。</li>
+                        <li>设计并实施 <code>SSR/ISR</code> 策略，显著改善 <code>SEO</code> 和首屏加载速度 (体现性能优化)。</li>
+                        <li>构建高质量组件库，统一 <code>UI/UX</code> 规范 (体现页面设计与实现)。</li>
+                        <li>负责前端性能监控与优化，解决渲染瓶颈和网络加载问题 (直接回应要求)。</li>
+                    </ul>
+                </div>
+                 <div>
+                    <strong class="block mb-1 text-blue-700">项目成果:</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                        <li>首屏可交互时间 (TTI) 减少 <strong>40%</strong>。</li>
+                        <li><code>Google Lighthouse</code> 性能评分从 <strong>XX</strong> 提升至 <strong>YY</strong>。</li>
+                        <li>代码复用率提高 <strong>30%</strong>，开发效率提升约 <strong>25%</strong> (体现可维护性)。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-6 p-4 border rounded-lg project-card">
+                <h3 class="text-xl font-semibold mb-1 text-blue-800">项目二：企业级数据可视化分析平台 (Vue)</h3>
+                 <p class="mb-2 text-sm"><strong>项目描述:</strong> 为企业内部打造的一款数据可视化分析平台，支持多种数据源接入、拖拽式图表配置和实时数据展示。</p>
+                 <p class="mb-2 text-sm"><strong>技术栈:</strong> <code>Vue 3</code>, <code>Pinia</code>, <code>TypeScript</code>, <code>Vite</code>, <code>ECharts</code>, <code>Element Plus</code></p>
+                 <div class="mb-2">
+                     <strong class="block mb-1 text-blue-700">我的职责 (突出 Vue 应用、数据交互、动态效果):</strong>
+                     <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                        <li>负责核心模块（如图表配置面板、数据展示模块）的设计与开发 (<code>Vue 3 Composition API</code>)。</li>
+                        <li>基于 <code>ECharts</code> 封装图表组件，实现动态数据更新与交互效果 (体现动态效果实现)。</li>
+                        <li>使用 <code>WebSocket</code> 实现数据的实时推送，完成与后端的数据交互对接。</li>
+                        <li>优化大数据量下的图表渲染性能，保证流畅交互 (体现性能优化)。</li>
+                     </ul>
+                 </div>
+                 <div>
+                     <strong class="block mb-1 text-blue-700">项目成果:</strong>
+                     <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                        <li>平台成功上线，为业务部门提供了强大的数据分析能力。</li>
+                        <li>实现了复杂报表的快速、动态生成。</li>
+                        <li>获得用户好评，成为内部重要数据工具。</li>
+                     </ul>
+                 </div>
+            </div>
+
+            <div class="mb-6 p-4 border rounded-lg project-card">
+                <h3 class="text-xl font-semibold mb-1 text-blue-800">项目三：高性能实时数据监控 Dashboard (React)</h3>
+                <p class="mb-2 text-sm"><strong>项目描述:</strong> 构建实时数据监控仪表盘，处理并展示来自多源头的大量实时指标，保证交互流畅。</p>
+                <p class="mb-2 text-sm"><strong>技术栈:</strong> `React (Hooks)`, `WebSocket`, `Web Workers`, `Canvas (ECharts)`, `Redux/Zustand`, `TypeScript`</p>
+                 <div class="mb-2">
+                    <strong class="block mb-1 text-blue-700">我的职责 (突出性能优化、数据处理):</strong>
+                     <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                         <li>负责前端架构设计，特别是实时数据流处理方案。</li>
+                         <li>开发核心可视化图表组件，支持高频动态更新。</li>
+                         <li>重点解决前端性能瓶颈，通过 <code>Web Workers</code>, <code>Canvas</code> 渲染, 节流/防抖等手段保证高数据吞吐量下 UI 不卡顿 (深度体现性能优化)。</li>
+                         <li>实现稳定的 <code>WebSocket</code> 连接管理与自动重连。</li>
+                    </ul>
+                </div>
+                <div>
+                    <strong class="block mb-1 text-blue-700">项目成果:</strong>
+                    <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
+                        <li>成功交付高性能实时监控系统，数据延迟控制在 <strong>YYY</strong> 毫秒内。</li>
+                        <li>CPU 和内存占用率显著降低，高负载下依然稳定流畅。</li>
+                        <li>帮助团队实时掌握系统状态，问题响应时间缩短 <strong>ZZ%</strong>。</li>
+                    </ul>
+                </div>
+            </div>
+            
+             <!-- 其他项目经验可以精简或放在后面 -->
+             <details class="mb-6 p-4 border rounded-lg project-card bg-gray-50">
+                <summary class="text-lg font-semibold text-blue-700 cursor-pointer">其他项目经验 (点击展开)</summary>
+                <div class="mt-4 space-y-4">
+                    <div>
+                        <h4 class="text-md font-semibold text-gray-800">基于 uni-app 的多端电商小程序</h4>
+                        <p class="text-sm text-gray-600">使用 `uni-app` (`Vue.js` 基础) 开发多端电商应用，负责架构设计、核心模块、原生 API 调用、性能优化和多端适配。</p>
+                    </div>
+                    <div>
+                         <h4 class="text-md font-semibold text-gray-800">面向国际化的企业级 SaaS 产品 (Vue)</h4>
+                         <p class="text-sm text-gray-600">使用 `Vue 3` 开发，负责国际化 (`i18n`) 方案实施，包括动态加载语言包、复数处理、日期时区处理、RTL 布局支持。</p>
+                    </div>
+                     <div>
+                        <h4 class="text-md font-semibold text-gray-800">基于微前端架构的后台管理系统重构 (React/Vue)</h4>
+                        <p class="text-sm text-gray-600">参与微前端架构 (`qiankun`) 选型与设计，负责主应用搭建、子应用接入规范、样式隔离、通信机制、公共依赖管理。</p>
+                    </div>
+                </div>
+            </details>
+
+        </section>
+
+        <hr />
+
+        <section id="evaluation" class="mb-8">
+            <h2 class="text-2xl font-semibold border-b-2 border-blue-200 pb-2 mb-4">自我评价</h2>
+             <!-- 直接回应岗位要求 -->
+            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                 <li>拥有 <strong>8 年</strong>丰富 Web 前端开发经验，计算机科学与技术专业背景。</li>
+                <li>精通 <code>HTML5</code>、<code>CSS3</code>、<code>JavaScript</code> 及 <code>TypeScript</code>，熟练掌握 <code>响应式布局</code> 和 <code>移动端适配</code>。</li>
+                <li>精通 <code>React</code> 和 <code>Vue.js</code> 框架，能够独立高效地完成复杂前端项目的设计与开发。</li>
+                <li>对 <code>前端性能优化</code>、<code>用户体验</code>、<code>Web 可访问性</code> 及 <code>代码可维护性</code> 有深入理解和丰富的实践经验。</li>
+                <li>具备良好的编码习惯，注重代码质量和团队规范。</li>
+                <li>具备优秀的沟通能力和团队协作精神，能积极融入团队，并能承受一定的工作压力。</li>
+                 <li>学习能力强，乐于接受新技术，持续关注行业发展动态。</li>
+            </ul>
+        </section>
+
+        <footer class="text-center mt-8 text-sm text-gray-500 no-print">
+            <p>此简历已根据目标职位要求进行优化 | Generated with AI assistance.</p>
+        </footer>
+
+    </div>
+</body>
+</html> 

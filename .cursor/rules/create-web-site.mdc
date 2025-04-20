@@ -1,0 +1,20 @@
+---
+description: 创建一个{site_name}网站
+globs: 
+alwaysApply: false
+---
+# 创建{site_name}网站，你需要做的任务和指令有:
+## 生成网页
+检查根目录文件结构，在根目录新建一个英文名文件夹{site_folder}，确保与已有文件夹不冲突。将生成的所有文件存放到文件夹{site_folder}中。
+## 添加网站到导航
+分析根目录下的index.html的结构，增加相关代码，链接到新创建的网站
+## 发布网站
+在根目录执行git commit，然后执行gitpush将代码推送到远端master分支。
+## 预览网站
+在浏览器中导航到:https://xihuhaomingbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.github.io/web-resume/{site_folder}
+
+# 生成网页时注意事项
+- 生成纯静态顶面，不要使用任何js框架，例如react，vue，nextjs
+- html需要引用其它文件时，一律先复制到{site folder}目录，再链接
+- 可以使用tailwindcss作为css库
+- 考虑seo要求
