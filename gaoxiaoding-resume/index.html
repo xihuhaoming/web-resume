@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="高晓定 - 实习应届生求职简历">
+    <title>高晓定 - 个人简历</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer utilities {
+            .section-underline {
+                @apply border-b border-gray-200 pb-2 mb-4;
+            }
+            .section-dot {
+                @apply w-3 h-3 rounded-full mr-3 inline-block;
+            }
+        }
+        body {
+            font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #495057; /* Darker gray text */
+        }
+        .resume-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            background-color: white;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+            border-radius: 8px;
+            overflow: hidden; /* Needed for background wave */
+        }
+        .header-bg {
+            background-color: #e9ecef; /* Header background color from image */
+            padding: 2.5rem 3rem 4rem; /* Adjust padding */
+            position: relative;
+        }
+        /* Wavy divider using SVG */
+        .wave-divider {
+            position: absolute;
+            bottom: -1px; /* Position slightly overlapping */
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px); /* Ensure full width coverage */
+            height: 60px; /* Adjust wave height */
+        }
+        .wave-divider .shape-fill {
+            fill: #FFFFFF; /* Color of the element below the wave */
+        }
+
+        /* Profile Image */
+        .profile-image-container {
+            position: relative;
+            width: 130px; /* Adjust size */
+            height: 130px;
+        }
+        .profile-image-dots {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            border: 2px dashed #adb5bd; /* Dot color from image */
+            border-radius: 50%;
+            animation: rotate 20s linear infinite; /* Optional: subtle rotation */
+        }
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white; /* White border around image */
+            background-color: white; /* Ensure background is white if image is transparent */
+            position: relative; /* Ensure image is above dots */
+            z-index: 1;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Header Text */
+        .header-info h1 {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 600;
+            color: #343a40; /* Darker text color */
+            margin-bottom: 0.5rem;
+        }
+        .header-info p {
+            font-size: 1rem; /* 16px */
+            color: #495057;
+            margin-bottom: 0.25rem;
+        }
+        .contact-info p {
+            font-size: 0.875rem; /* 14px */
+            color: #6c757d; /* Slightly lighter contact info */
+             line-height: 1.6;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            padding: 2.5rem 3rem;
+        }
+        .section-title {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            color: #343a40;
+            display: flex;
+            align-items: center;
+             margin-bottom: 0.5rem; /* Space below title before line */
+        }
+        /* Accent color from image (dots, potentially other highlights) */
+        .accent-color {
+             background-color: #a0d2db; /* Approximate color from image */
+        }
+
+         /* Experience/Education item styling */
+        .item-header {
+             display: flex;
+             justify-content: space-between;
+             align-items: baseline;
+             margin-bottom: 0.25rem;
+        }
+         .item-title {
+             font-size: 1rem; /* 16px */
+             font-weight: 600;
+             color: #343a40;
+         }
+         .item-subtitle {
+             font-size: 1rem; /* 16px */
+             font-weight: 500;
+             color: #495057;
+             margin-bottom: 0.5rem;
+         }
+         .item-date {
+             font-size: 0.9rem; /* 14.4px */
+             color: #6c757d;
+             font-weight: 500;
+         }
+         .item-description {
+             font-size: 0.9rem; /* 14.4px */
+             color: #6c757d;
+             line-height: 1.7;
+             margin-top: 0.5rem;
+         }
+         .item-details p {
+             font-size: 0.9rem;
+             color: #6c757d;
+             margin-bottom: 0.25rem;
+         }
+
+        /* Campus Experience Specific */
+        .campus-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+             border-bottom: 1px dashed #dee2e6; /* Dashed separator for sub-items */
+        }
+         .campus-item:last-child {
+             border-bottom: none;
+             padding-bottom: 0;
+             margin-bottom: 0;
+         }
+
+        /* Skills Specific */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem; /* 12px */
+            padding-left: calc(0.75rem + 12px); /* Align with dot */
+        }
+        .skill-tag {
+            background-color: #e9ecef; /* Light background for tags */
+            color: #495057;
+            padding: 0.25rem 0.75rem; /* 4px 12px */
+            border-radius: 1rem; /* Pill shape */
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+        }
+
+         @media print {
+            body { background-color: white !important; color: black !important; font-size: 10pt; }
+            .resume-container { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: 100% !important; border-radius: 0; }
+            .no-print { display: none !important; }
+            .header-bg { background-color: #eee !important; padding: 1cm; }
+            .wave-divider { display: none; }
+            .profile-image-container { width: 100px; height: 100px; margin-bottom: 1rem;}
+            .profile-image-dots { display: none; }
+             .profile-image { border-width: 2px;}
+            .header-info h1 { font-size: 18pt; color: black !important;}
+            .header-info p, .contact-info p { font-size: 10pt; color: black !important;}
+            .main-content { padding: 1cm; }
+            .section-title { font-size: 12pt; color: black !important; margin-bottom: 0.5rem; }
+            .section-underline { border-color: #ccc !important; padding-bottom: 0.1rem; margin-bottom: 0.8rem;}
+            .section-dot { background-color: #ccc !important; width: 8px; height: 8px; margin-right: 8px; }
+             .item-title, .item-subtitle { font-size: 10pt; color: black !important; }
+             .item-date, .item-description, .item-details p, .skill-tag { font-size: 9pt; color: black !important;}
+             .skill-tag { background-color: #eee !important; padding: 2px 6px; border-radius: 4px; }
+            h1, h2, h3, p, ul, li, div { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <header class="header-bg">
+            <div class="flex flex-col md:flex-row items-start">
+                <!-- Profile Image -->
+                <div class="profile-image-container mr-8 mb-6 md:mb-0 flex-shrink-0 no-print">
+                    <div class="profile-image-dots"></div>
+                    <img src="https://via.placeholder.com/130/DEE2E6/495057?text=GX" alt="高晓定 头像" class="profile-image">
+                    <!-- Replace with actual image URL: <img src="path/to/your/photo.jpg" alt="高晓定 头像" class="profile-image"> -->
+                </div>
+                <!-- Header Text Info -->
+                <div class="header-info flex-grow mr-8">
+                    <h1>高晓定</h1>
+                    <p class="font-medium">求职目标：实习应届</p>
+                </div>
+                <!-- Contact Info -->
+                <div class="contact-info text-left md:text-right flex-shrink-0">
+                    <p>电话：(+86) 138-0013-8000</p>
+                    <p>邮箱：gaoxiaoding@gaoding.com</p>
+                    <p>地址：福建省厦门市湖里区</p>
+                </div>
+            </div>
+             <!-- Wavy Divider -->
+            <div class="wave-divider no-print">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31.74,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="main-content">
+
+            <!-- 教育经历 -->
+            <section class="mb-8">
+                <h2 class="section-title">
+                    <span class="section-dot accent-color"></span>教育经历
+                </h2>
+                <div class="section-underline"></div>
+                <div class="item-header">
+                     <span class="item-title">稿定学院幼儿教育专业</span>
+                     <span class="item-date">2017.9 - 2020.07</span>
+                </div>
+                 <p class="item-subtitle">大专</p>
+                 <div class="item-details">
+                     <p>持有体智能教师资格证</p>
+                     <!-- Add more details if needed -->
+                 </div>
+            </section>
+
+            <!-- 教学经历 -->
+            <section class="mb-8">
+                <h2 class="section-title">
+                    <span class="section-dot accent-color"></span>教学经历
+                </h2>
+                <div class="section-underline"></div>
+                 <div class="item-header">
+                     <span class="item-title">稿定师专附属幼儿园</span>
+                     <span class="item-date">实习幼教</span> <!-- Assuming dates or role fit here -->
+                 </div>
+                 <!-- <p class="item-subtitle">实习幼教</p> -->
+                 <p class="item-description">
+                    实习期间，分别从教于大班、中班、小班不同班级通过与老师学习与交流，提高了对幼儿一日教学与生活的了解，积累了实践经验运用教育学、儿童心理学的专业知识，解决儿童日常生活中的问题教授幼儿唱歌、跳舞、绘画等课程得到指导老师与辅导员认可，也得到家长和园长的满意，获得"最佳实习老师"称号。
+                 </p>
+            </section>
+
+             <!-- 校园经历 -->
+            <section class="mb-8">
+                <h2 class="section-title">
+                    <span class="section-dot accent-color"></span>校园经历
+                </h2>
+                <div class="section-underline"></div>
+
+                <div class="campus-item">
+                    <div class="item-header">
+                        <span class="item-title">稿定学院学生会</span>
+                        <div>
+                             <span class="item-subtitle inline-block mr-4">学院宣传部</span>
+                             <span class="item-subtitle inline-block">秘书长</span>
+                        </div>
+                     </div>
+                     <p class="item-description">
+                        负责文案创作、海报绘画等工作，锻炼了良好的文字表述能力及绘画能力；组织了多次校园海报大赛，通过公众号、宣传单、校园广播等多种方式宣传活动，收到共300人参与，投稿作品345份。
+                     </p>
+                </div>
+
+                 <div class="campus-item">
+                    <div class="item-header">
+                        <span class="item-title">2019年元旦</span>
+                        <span class="item-subtitle">晚会主持人</span>
+                     </div>
+                     <p class="item-description">
+                        单独完成主持稿，担任晚会主持，并参与活动策划、节目编排。
+                     </p>
+                </div>
+                 <!-- Add more campus items if needed -->
+            </section>
+
+            <!-- 工作技能 -->
+            <section>
+                <h2 class="section-title">
+                    <span class="section-dot accent-color"></span>工作技能
+                </h2>
+                <div class="section-underline"></div>
+                 <div class="skills-list">
+                     <span class="skill-tag">钢琴x级</span>
+                     <span class="skill-tag">舞蹈</span>
+                     <span class="skill-tag">唱歌</span>
+                     <span class="skill-tag">绘画</span>
+                     <span class="skill-tag">手工</span>
+                     <!-- Add more skills as needed -->
+                 </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html> 

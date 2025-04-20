@@ -3,124 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="张洋 - 针对性求职简历。8年经验前端工程师，精通React/Vue，注重性能与用户体验。">
-    <title>张洋 - 高级前端工程师简历</title>
+    <meta name="description" content="张洋 - 个人简历。8年经验Web前端工程师，精通React/Vue。">
+    <title>张洋 - Web前端工程师简历</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome (Optional, if icons are desired beyond the image style) -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <style>
         body {
             font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #e5e7eb; /* gray-200 */
-            color: #374151; /* gray-700 */
+            background-color: #f3f4f6; /* gray-100, lighter background */
+            color: #1f2937; /* gray-800, dark text */
         }
-        .section-title {
-            display: inline-flex;
-            align-items: center;
-            background-color: #374151; /* gray-700, darker background */
-            color: white;
-            padding: 0.4rem 1rem;
-            font-weight: 600;
-            border-radius: 0.125rem; /* Less rounded */
-            margin-bottom: 1.25rem; /* More margin */
-            font-size: 0.875rem;
-        }
-        .section-title i {
-            margin-right: 0.6rem;
-            width: 1em; /* Ensure icon takes space */
-            text-align: center;
-        }
-         .section-title .en-title {
-            font-size: 0.7rem;
-            margin-left: 0.5rem;
-            opacity: 0.8;
-            text-transform: uppercase;
-         }
-
-        .left-column {
-            background-color: #111827; /* gray-900, darker */
-            color: #d1d5db; /* gray-300 */
+        .resume-container {
+            max-width: 800px; /* Adjust width as needed */
+            background-color: white;
+            margin: 2rem auto;
+            padding: 3rem 4rem; /* More padding */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* To contain decorative elements */
         }
-         /* Top-left diagonal decorative element */
-        .left-column::before {
+
+        /* Decorative dot pattern - top left */
+        .resume-container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 120%; /* Adjust width */
-            height: 200px; /* Adjust height */
-            background: linear-gradient(to bottom right, #374151, #1f2937); /* gray-700 to gray-800 gradient */
-            transform: rotate(-20deg) translate(-25%, -35%);
-            transform-origin: top left;
+            top: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-image: radial-gradient(#e5e7eb 15%, transparent 15%);
+            background-size: 10px 10px;
             z-index: 0;
-        }
-        /* Bottom-right diagonal decorative element (optional, subtle) */
-        body::after {
-            content: '';
-            position: fixed; /* Fixed to viewport bottom right */
-            bottom: 0;
-            right: 0;
-            width: 30%;
-            height: 100px;
-            background: linear-gradient(to top left, #d1d5db, transparent); /* gray-300 to transparent */
-            transform: rotate(-20deg) translate(20%, 20%);
-            transform-origin: bottom right;
-            z-index: -1; /* Behind everything */
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
-        .left-column > * {
+        /* Decorative Illustration Placeholder - top right */
+        .illustration-placeholder {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            width: 150px; /* Adjust size */
+            height: 120px; /* Adjust size */
+            /* background-color: #e5e7eb; */ /* Placeholder color */
+            /* border-radius: 4px; */
+            z-index: 0; /* Behind text */
+            /* Placeholder content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 0.8rem;
+            /* border: 1px dashed #d1d5db; */
+             opacity: 0.8;
+        }
+         /* Simple SVG placeholder for illustration */
+        .illustration-placeholder svg {
+             width: 80%;
+             height: 80%;
+             fill: #d1d5db; /* gray-300 */
+        }
+
+        .main-title {
+            font-size: 2.5rem; /* Larger title */
+            font-weight: 600;
+            color: #111827; /* gray-900, darkest */
+            margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .sub-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #059669; /* Emerald-600 - Using a professional teal/emerald */
+            margin-bottom: 2.5rem;
             position: relative;
             z-index: 1;
         }
 
-        /* Right column list styling */
-        .right-column ul {
-            padding-left: 0; /* Remove default padding */
-            list-style: none;
-        }
-        .right-column ul li {
+        .section-title {
+            font-size: 1.5rem; /* Larger section titles */
+            font-weight: 600;
+            color: #111827; /* gray-900 */
+            margin-bottom: 0.5rem; /* Less margin below title */
+            padding-bottom: 0.5rem; /* Space before wavy line */
             position: relative;
-            padding-left: 1.25rem; /* Adjust spacing */
-            margin-bottom: 0.4rem;
-            font-size: 0.875rem;
-            line-height: 1.6;
+            z-index: 1;
         }
-        .right-column ul li::before {
-            content: ""; /* Custom line/bullet */
-            position: absolute;
-            left: 0;
-            top: 0.5em; /* Vertically center */
-            width: 6px;
-            height: 6px;
-            background-color: #9ca3af; /* gray-400 */
-            border-radius: 50%;
+        .wavy-separator {
+            display: block;
+            margin-bottom: 1.5rem; /* Space after separator */
+            width: 80px;
+            height: 10px;
+            position: relative;
+            z-index: 1;
         }
-        .skill-list li {
-            margin-bottom: 0.8rem;
-            padding-left: 0;
-            line-height: 1.5;
+        .wavy-separator svg path {
+            stroke: #a5f3fc; /* cyan-200 - Light accent for separator */
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* Work Experience Specific Styles */
+        .work-item {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem; /* Space for potential vertical line */
+            border-left: 2px solid #e5e7eb; /* Subtle vertical line */
+            padding-bottom: 1rem;
+        }
+         .work-item:last-child {
+             border-left: 2px solid transparent; /* No line for last item */
+             padding-bottom: 0;
+         }
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.3rem;
+            padding-left: 0.5rem; /* Align with list */
+        }
+        .work-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937; /* gray-800 */
+        }
+        .work-company {
+             font-size: 0.95rem;
+             font-weight: 500;
+             color: #059669; /* Emerald-600 accent for company */
+             margin-bottom: 0.5rem;
+             padding-left: 0.5rem; /* Align with list */
+        }
+        .work-dates {
+            font-size: 0.85rem;
+            color: #6b7280; /* gray-500 */
+        }
+        .work-details {
+            list-style: none; /* Remove default */
+            padding-left: 0.5rem; /* Indent list items */
+            margin-top: 0.5rem;
+        }
+        .work-details li {
             font-size: 0.9rem;
+            color: #4b5563; /* gray-600 */
+            line-height: 1.6;
+            margin-bottom: 0.3rem;
+            position: relative;
+            padding-left: 1.2rem; /* Space for number */
         }
-        .skill-list li::before {
-            content: none;
+         .work-details li::before {
+             content: counter(list-item) "."; /* Add number */
+             position: absolute;
+             left: 0;
+             font-weight: 600;
+             color: #059669; /* Emerald-600 */
+             font-size: 0.85rem;
+         }
+         .work-details {
+             counter-reset: list-item; /* Reset counter for each list */
+         }
+          .work-details li {
+              counter-increment: list-item; /* Increment counter */
+          }
+
+        /* Personal Info Styles */
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 0.5rem 1.5rem; /* Row and column gap */
+            font-size: 0.9rem;
+            color: #4b5563; /* gray-600 */
         }
-        .skill-number {
-             display: inline-block;
-             background-color: #4b5563; /* gray-600 */
-             color: white;
-             border-radius: 0.25rem; /* Square-ish */
-             min-width: 1.6rem;
-             padding: 0.1rem 0.4rem;
-             text-align: center;
-             line-height: 1.4rem;
-             font-weight: bold;
-             margin-right: 0.8rem;
-             font-size: 0.8rem;
+        .personal-info-grid p {
+            margin-bottom: 0.2rem;
         }
-         /* Code tag styling */
+        .personal-info-grid strong {
+            color: #1f2937; /* gray-800 */
+            margin-right: 0.5em;
+            font-weight: 500; /* Slightly less bold */
+        }
+
+        /* Education Styles */
+        .education-item {
+            margin-bottom: 1rem;
+        }
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.1rem;
+        }
+        .education-university {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937; /* gray-800 */
+        }
+        .education-major {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #059669; /* Emerald-600 accent */
+            margin-bottom: 0.3rem;
+        }
+        .education-dates {
+            font-size: 0.85rem;
+            color: #6b7280; /* gray-500 */
+        }
+        .education-details {
+            font-size: 0.9rem;
+            color: #4b5563; /* gray-600 */
+            margin-top: 0.3rem;
+        }
+
+        /* Skills Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem 2rem;
+        }
+        .skill-item {
+            margin-bottom: 0.5rem;
+        }
+        .skill-name {
+            display: block;
+            font-size: 0.9rem;
+            color: #374151; /* gray-700 */
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+        .skill-bar-bg {
+            background-color: #e5e7eb; /* gray-200 */
+            border-radius: 4px;
+            height: 8px;
+            overflow: hidden;
+        }
+        .skill-bar {
+            background-color: #059669; /* Emerald-600 */
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        /* Code tag styling */
         code {
             background-color: #e5e7eb; /* gray-200 */
             color: #1f2937; /* gray-800 */
@@ -131,179 +255,241 @@
         }
 
         @media print {
-            body { background-color: white !important; color: black !important; font-size: 9pt; margin: 0; padding: 0; }
-            .no-print { display: none; }
-            .print-container { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: 100% !important; padding: 0 !important; }
-            .print-flex-row { flex-direction: row !important; }
-            .print-w-left { width: 30% !important; }
-            .print-w-right { width: 70% !important; }
-            .left-column { background-color: #f3f4f6 !important; color: black !important; border-right: 1px solid #ccc; }
-            .left-column::before, body::after { display: none; } /* Hide decorative elements */
-            .right-column { background-color: white !important; }
-            .section-title { background-color: #eee !important; color: black !important; font-weight: bold; padding: 0.25rem 0.5rem; }
-            .section-title i { color: black !important; }
-            h1, h2, h3, p, ul, li, strong { color: black !important; page-break-inside: avoid; }
-            code { border: 1px solid #ccc; padding: 0 0.2em; font-size: 8pt; border-radius: 3px; background-color: transparent !important; color: black !important; }
-            .skill-number { background-color: #eee !important; color: black !important; }
-            ul { padding-left: 1rem; }
-            li { margin-bottom: 0.25rem; }
-            .right-column ul li::before { background-color: black !important; }
+            body { background-color: white !important; color: black !important; font-size: 10pt; }
+            .resume-container { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: 100% !important; padding: 1cm !important; border-radius: 0; }
+            .no-print { display: none !important; }
+            .resume-container::before, .illustration-placeholder { display: none; } /* Hide decorative elements */
+            .wavy-separator { display: none; } /* Hide wavy lines for print */
+            .main-title { font-size: 24pt; margin-bottom: 0; }
+            .sub-title { font-size: 12pt; color: black !important; margin-bottom: 1.5rem; }
+            .section-title { font-size: 14pt; color: black !important; border-bottom: 1px solid #ccc; padding-bottom: 0.2rem; margin-bottom: 0.8rem; }
+            .work-item { border-left: none; padding-left: 0; }
+            .work-header, .education-header { color: black !important; }
+            .work-title, .education-university { font-size: 11pt; }
+            .work-company, .education-major { font-size: 10pt; color: black !important; }
+            .work-dates, .education-dates { font-size: 9pt; color: black !important; }
+            .work-details li, .personal-info-grid p, .education-details { font-size: 10pt; color: black !important; }
+            .work-details li::before { color: black !important; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .skill-bar-bg { background-color: #eee !important; }
+            .skill-bar { background-color: #ccc !important; }
+            code { border: 1px solid #eee; padding: 0 0.2em; background-color: transparent !important; color: black !important; font-size: 9pt; }
+             ul, li, p, h1, h2, h3 { page-break-inside: avoid; }
         }
     </style>
 </head>
-<body class="bg-gray-200">
-    <div class="container mx-auto my-8 max-w-5xl bg-white shadow-lg rounded-lg overflow-hidden print-container">
-        <div class="md:flex print-flex-row">
-            <!-- Left Column -->
-            <div class="md:w-1/3 p-6 md:p-8 left-column print-w-left">
-                 <div class="mb-8 text-center">
-                     <img src="https://via.placeholder.com/150/D1D5DB/111827?text=ZY" alt="张洋头像" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-500 object-cover no-print">
-                     <h1 class="text-3xl font-bold text-white mt-6">张洋</h1>
-                     <p class="text-md text-gray-300 mt-1">高级前端工程师</p>
-                     <hr class="border-t border-gray-700 my-6">
-                     <div class="text-xs space-y-2 text-gray-400 text-left">
-                        <p><i class="fas fa-map-marker-alt w-4 mr-2 text-center"></i>期望地点: (例: 北京/上海/远程)</p>
-                        <p><i class="fab fa-github w-4 mr-2 text-center"></i>GitHub: github.com/yourusername</p>
-                        <p><i class="fas fa-blog w-4 mr-2 text-center"></i>技术博客: yourwebsite.com</p>
-                        <p><i class="fas fa-phone w-4 mr-2 text-center"></i>电话: 138-xxxx-xxxx (请替换)</p>
-                        <p><i class="fas fa-envelope w-4 mr-2 text-center"></i>邮箱: zhangyang@email.com (请替换)</p>
-                    </div>
-                </div>
-
-                <div class="mb-8">
-                    <h2 class="section-title text-sm"><i class="fas fa-graduation-cap"></i> 教育经历 <span class="en-title">Education</span></h2>
-                    <p class="font-semibold text-gray-100">河南农业大学</p>
-                    <p class="text-sm text-gray-300">计算机科学与技术 | 本科</p>
-                    <p class="text-xs text-gray-400">2012年 9月 - 2016年 6月</p>
-                    <p class="mt-2 text-xs text-gray-400">主修: 数据结构, 算法, 计算机网络, 操作系统等。</p>
-                </div>
-            </div>
-
-            <!-- Right Column -->
-            <div class="md:w-2/3 p-6 md:p-8 bg-white right-column print-w-right">
-                 <!-- Experience years might go here or top right -->
-                 <p class="text-right text-sm text-gray-500 mb-6"><i class="fas fa-briefcase mr-1"></i>8年 Web 前端开发经验</p>
-
-                <!-- Work Experience -->
-                <section class="mb-8">
-                    <h2 class="section-title"><i class="fas fa-briefcase"></i> 工作经历 <span class="en-title">Experience</span></h2>
-                    <div class="mb-6">
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-lg font-semibold text-gray-800">高级前端工程师</h3>
-                            <p class="text-xs text-gray-500">2019年 月 - 至今</p>
-                        </div>
-                         <p class="text-sm font-medium text-gray-600 mb-2">XXX 科技有限公司</p>
-                         <ul class="space-y-1">
-                            <li>负责核心产品线Web前端页面设计与实现，关注美观性与用户体验。</li>
-                            <li>使用<code>React</code>/<code>Vue</code>等框架独立开发复杂模块。</li>
-                            <li>与后端紧密配合，完成数据交互及动态页面效果。</li>
-                            <li>主导前端性能优化，提升页面加载速度和运行时性能。</li>
-                            <li>处理浏览器兼容性，实施响应式设计与移动端适配。</li>
-                            <li>推动工程化建设(<code>Vite</code>)，制定代码规范，组织<code>Code Review</code>。</li>
-                            <li>指导初级工程师，进行技术分享。</li>
-                        </ul>
-                         <p class="mt-3 text-xs font-semibold text-gray-700">主要成就:</p>
-                         <ul class="text-xs mt-1 space-y-0.5">
-                             <li>主导在线教育平台前端重构(<code>React Hooks</code> + <code>TypeScript</code>)，首屏加载优化XX%。</li>
-                             <li>引入<code>Cypress</code>进行E2E测试，覆盖率提升至90%。</li>
-                             <li>负责公共组件库(<code>React</code>/<code>Vue</code>)开发(10+组件)，提升开发效率。</li>
-                             <li>解决了[某个与性能或兼容性相关的具体技术难题]。</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h3 class="text-lg font-semibold text-gray-800">前端工程师</h3>
-                             <p class="text-xs text-gray-500">2016年 月 - 2019年 月</p>
-                        </div>
-                         <p class="text-sm font-medium text-gray-600 mb-2">YYY 信息技术有限公司</p>
-                         <ul class="space-y-1">
-                            <li>参与CRM/数据可视化平台前端开发(<code>Vue.js</code>)。</li>
-                            <li>实现前端页面效果，与后端协作完成数据交互。</li>
-                            <li>进行日常维护、Bug修复和基础性能优化。</li>
-                        </ul>
-                         <p class="mt-3 text-xs font-semibold text-gray-700">主要成就:</p>
-                         <ul class="text-xs mt-1 space-y-0.5">
-                             <li>独立负责[具体模块名称]前端开发，按时高质量交付。</li>
-                             <li>优化[某个功能/页面]加载性能，响应时间缩短XX毫秒。</li>
-                             <li>参与维护基于<code>Element UI</code>的内部组件库。</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Project Experience -->
-                 <section class="mb-8">
-                    <h2 class="section-title"><i class="fas fa-project-diagram"></i> 项目经验 <span class="en-title">Projects</span></h2>
-                    <div class="mb-5">
-                        <h3 class="text-md font-semibold text-gray-800 mb-1">大型在线零售平台前端重构 (<code>React</code>)</h3>
-                        <p class="text-xs text-gray-500 mb-2">技术栈: <code>React</code>, <code>Redux</code>, <code>TypeScript</code>, <code>Next.js</code>, <code>Styled-Components</code>, <code>Webpack</code>, <code>Cypress</code></p>
-                        <ul class="space-y-1">
-                            <li>担任前端技术负责人，主导技术选型与架构。</li>
-                            <li>负责核心页面模块开发(<code>React Hooks</code>)。</li>
-                            <li>实施SSR/ISR策略，改善SEO和首屏加载。</li>
-                            <li>构建高质量组件库，统一UI/UX规范。</li>
-                            <li>负责前端性能监控与优化，解决渲染瓶颈。</li>
-                            <li><span class="font-semibold">成果:</span> TTI减少40%, Lighthouse评分提升, 代码复用率↑30%。</li>
-                        </ul>
-                    </div>
-                     <div class="mb-5">
-                        <h3 class="text-md font-semibold text-gray-800 mb-1">企业级数据可视化分析平台 (<code>Vue</code>)</h3>
-                        <p class="text-xs text-gray-500 mb-2">技术栈: <code>Vue 3</code>, <code>Pinia</code>, <code>TypeScript</code>, <code>Vite</code>, <code>ECharts</code>, <code>Element Plus</code></p>
-                         <ul class="space-y-1">
-                             <li>负责核心模块设计与开发(<code>Vue 3 Composition API</code>)。</li>
-                             <li>基于<code>ECharts</code>封装图表组件，实现动态更新与交互。</li>
-                             <li>使用<code>WebSocket</code>实现数据实时推送，完成数据交互。</li>
-                             <li>优化大数据量下图表渲染性能。</li>
-                            <li><span class="font-semibold">成果:</span> 平台成功上线，提升数据分析能力，获用户好评。</li>
-                        </ul>
-                    </div>
-                    <div class="mb-5">
-                        <h3 class="text-md font-semibold text-gray-800 mb-1">高性能实时数据监控 Dashboard (<code>React</code>)</h3>
-                        <p class="text-xs text-gray-500 mb-2">技术栈: <code>React Hooks</code>, <code>WebSocket</code>, <code>Web Workers</code>, <code>Canvas</code>, <code>Redux/Zustand</code>, <code>TypeScript</code></p>
-                        <ul class="space-y-1">
-                             <li>负责前端架构设计，特别是实时数据流处理。</li>
-                             <li>开发核心可视化图表组件，支持高频动态更新。</li>
-                             <li>重点解决性能瓶颈(<code>Web Workers</code>, <code>Canvas</code>渲染, 节流/防抖)。</li>
-                             <li>实现稳定的<code>WebSocket</code>连接管理与自动重连。</li>
-                            <li><span class="font-semibold">成果:</span> 高性能低延迟，高负载下稳定，问题响应时间缩短ZZ%。</li>
-                        </ul>
-                    </div>
-                     <details class="mt-4 text-sm">
-                        <summary class="font-semibold text-gray-600 cursor-pointer hover:text-gray-800">其他相关项目...</summary>
-                         <div class="mt-2 space-y-3 pl-5 border-l-2 border-gray-300">
-                            <p><strong>多端电商小程序(<code>uni-app</code>/<code>Vue</code>):</strong> 负责架构、核心模块、原生API、性能优化、多端适配。</p>
-                            <p><strong>国际化SaaS产品(<code>Vue</code>):</strong> 负责i18n方案(动态加载,复数,时区,RTL)。</p>
-                            <p><strong>微前端后台重构(<code>React</code>/<code>Vue</code>):</strong> 参与架构(<code>qiankun</code>),负责主应用、子应用规范、隔离、通信、依赖管理。</p>
-                        </div>
-                    </details>
-                </section>
-
-                <!-- Self Evaluation -->
-                 <section class="mb-8">
-                     <h2 class="section-title"><i class="fas fa-user-check"></i> 自我评价 <span class="en-title">Profile</span></h2>
-                    <ul class="space-y-1">
-                        <li>拥有<strong>8年</strong>丰富Web前端开发经验，计算机专业背景。</li>
-                        <li>精通HTML5/CSS3/JavaScript/TypeScript，熟练掌握响应式布局和移动端适配。</li>
-                        <li>精通<strong><code>React</code></strong>和<strong><code>Vue.js</code></strong>框架，能独立高效完成复杂前端项目。</li>
-                        <li>对<strong>前端性能优化、用户体验、Web可访问性、代码可维护性</strong>有深入理解和丰富实践。</li>
-                        <li>具备良好编码习惯，注重代码质量和团队规范。</li>
-                        <li>具备优秀沟通能力和团队协作精神，能积极融入团队，并能承受一定工作压力。</li>
-                        <li>学习能力强，乐于接受新技术，持续关注行业发展动态。</li>
-                    </ul>
-                </section>
-
-                <!-- Skills -->
-                <section>
-                    <h2 class="section-title"><i class="fas fa-cogs"></i> 专业技能 <span class="en-title">Skills</span></h2>
-                    <ol class="skill-list list-none pl-0">
-                        <li><span class="skill-number">1</span> <strong>核心技术:</strong> 精通 <code>HTML5</code>, <code>CSS3</code>, <code>JavaScript(ES6+)</code>, <code>TypeScript</code>；熟练 <code>响应式布局</code>, <code>移动端适配</code>。</li>
-                        <li><span class="skill-number">2</span> <strong>框架&状态管理:</strong> 精通 <code>React</code> (Hooks), <code>Vue.js</code> (Vue 3, Composition API)；熟练 <code>Redux/Zustand</code>, <code>Pinia</code>。</li>
-                        <li><span class="skill-number">3</span> <strong>性能&体验:</strong> 深刻理解并实践 <code>性能优化</code> (网络/渲染/执行效率), <code>可访问性</code>, <code>代码可维护性</code>。</li>
-                        <li><span class="skill-number">4</span> <strong>工程化&工具:</strong> 熟练 <code>Webpack</code>, <code>Vite</code>, <code>Git/Git Flow</code>, <code>ESLint/Prettier</code>, <code>Jest/Cypress</code>。</li>
-                        <li><span class="skill-number">5</span> <strong>其他相关:</strong> 熟悉 <code>Node.js</code> (Express/Koa), <code>SSR/SSG</code> (Next.js/Nuxt.js), <code>RESTful API</code>, <code>HTTP/HTTPS</code>, <code>Sass/Less</code>, <code>ECharts/AntV</code>, <code>Docker</code>, <code>敏捷开发</code>。</li>
-                    </ol>
-                </section>
-            </div>
+<body>
+    <div class="resume-container">
+        <!-- Decorative elements -->
+        <div class="illustration-placeholder no-print">
+             <!-- Simple SVG Placeholder -->
+            <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="80" height="60" rx="5" ry="5" stroke="#d1d5db" stroke-width="2" fill="none"/>
+                <circle cx="35" cy="30" r="8"/>
+                <line x1="20" y1="50" x2="80" y2="50" stroke="#d1d5db" stroke-width="2"/>
+                <line x1="20" y1="60" x2="60" y2="60" stroke="#d1d5db" stroke-width="2"/>
+            </svg>
+            <!-- Or replace with <img> tag if you have an image URL -->
+            <!-- <img src="path/to/your/illustration.svg" alt="Illustration"> -->
         </div>
+
+        <!-- Header -->
+        <header class="mb-10 text-center relative z-10">
+            <h1 class="main-title">个人简历</h1>
+            <p class="sub-title">Web 前端工程师</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="relative z-10">
+
+            <!-- Work Experience -->
+            <section class="mb-8">
+                <h2 class="section-title">个人经历</h2>
+                <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-header">
+                        <span class="work-title">高级前端工程师</span>
+                        <span class="work-dates">2019年 月 - 至今</span>
+                    </div>
+                    <p class="work-company">XXX 科技有限公司</p>
+                    <ol class="work-details">
+                        <li>负责核心产品线Web前端页面设计与实现，关注美观性与用户体验。</li>
+                        <li>使用<code>React</code>/<code>Vue</code>等框架独立开发复杂模块。</li>
+                        <li>与后端紧密配合，完成数据交互及动态页面效果。</li>
+                        <li>主导前端性能优化，提升页面加载速度和运行时性能。</li>
+                        <li>处理浏览器兼容性，实施响应式设计与移动端适配。</li>
+                        <li>推动工程化建设(<code>Vite</code>)，制定代码规范，组织<code>Code Review</code>。</li>
+                        <li>指导初级工程师，进行技术分享。</li>
+                        <li><span class="font-semibold">主要成就:</span> 主导在线教育平台前端重构(<code>React Hooks</code> + <code>TypeScript</code>)，首屏加载优化XX%；引入<code>Cypress</code>进行E2E测试，覆盖率提升至90%；负责公共组件库(<code>React</code>/<code>Vue</code>)开发(10+组件)，提升开发效率；解决了[某个与性能或兼容性相关的具体技术难题]。</li>
+                    </ol>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-header">
+                        <span class="work-title">前端工程师</span>
+                        <span class="work-dates">2016年 月 - 2019年 月</span>
+                    </div>
+                     <p class="work-company">YYY 信息技术有限公司</p>
+                    <ol class="work-details">
+                        <li>参与CRM/数据可视化平台前端开发(<code>Vue.js</code>)。</li>
+                        <li>实现前端页面效果，与后端协作完成数据交互。</li>
+                        <li>进行日常维护、Bug修复和基础性能优化。</li>
+                        <li><span class="font-semibold">主要成就:</span> 独立负责[具体模块名称]前端开发，按时高质量交付；优化[某个功能/页面]加载性能，响应时间缩短XX毫秒；参与维护基于<code>Element UI</code>的内部组件库。</li>
+                    </ol>
+                </div>
+                <!-- Add more work items as needed -->
+            </section>
+
+            <!-- Personal Information -->
+            <section class="mb-8">
+                 <h2 class="section-title">个人信息</h2>
+                 <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+                <div class="personal-info-grid">
+                    <p><strong>姓名:</strong> 张洋</p>
+                    <p><strong>性别:</strong> 男</p>
+                    <p><strong>出生日期:</strong> (例: 199X-XX-XX)</p>
+                    <p><strong>籍贯:</strong> (例: 河南)</p>
+                    <p><strong>电话:</strong> 138-xxxx-xxxx (请替换)</p>
+                    <p><strong>邮箱:</strong> zhangyang@email.com (请替换)</p>
+                    <p><strong>期望地点:</strong> (例: 北京/上海/远程)</p>
+                    <p><strong>GitHub:</strong> github.com/yourusername (可选)</p>
+                    <p><strong>技术博客:</strong> yourwebsite.com (可选)</p>
+                    <p><strong>工作年限:</strong> 8年</p>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="mb-8">
+                <h2 class="section-title">教育经历</h2>
+                 <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+                <div class="education-item">
+                    <div class="education-header">
+                        <span class="education-university">河南农业大学</span>
+                        <span class="education-dates">2012年 9月 - 2016年 6月</span>
+                    </div>
+                    <p class="education-major">计算机科学与技术 | 本科</p>
+                    <p class="education-details">主修课程：数据结构, 算法设计与分析, 计算机网络, 操作系统, 数据库原理, Web开发技术等。</p>
+                </div>
+                 <!-- Add more education items if needed -->
+            </section>
+
+            <!-- Skills -->
+            <section class="mb-8">
+                <h2 class="section-title">专业技能</h2>
+                 <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">HTML5 / CSS3 / JavaScript (ES6+) / TypeScript</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React (Hooks) / Vue.js (Vue 3, Composition API)</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                     <div class="skill-item">
+                        <span class="skill-name">状态管理 (Redux/Zustand, Pinia)</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                     <div class="skill-item">
+                        <span class="skill-name">性能优化 / 用户体验 / 可访问性 / 代码可维护性</span>
+                         <div class="skill-bar-bg">
+                             <div class="skill-bar" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">工程化 (Webpack, Vite) / 构建工具</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">版本控制 (Git/Git Flow)</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">测试 (Jest, Cypress) / 代码规范 (ESLint/Prettier)</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js (Express/Koa) / SSR (Next.js/Nuxt.js)</span>
+                        <div class="skill-bar-bg">
+                            <div class="skill-bar" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                     <div class="skill-item">
+                         <span class="skill-name">数据可视化 (ECharts/AntV) / CSS预处理器 (Sass/Less)</span>
+                        <div class="skill-bar-bg">
+                             <div class="skill-bar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <!-- Add more skills as needed -->
+                </div>
+            </section>
+
+            <!-- Project Experience (Optional section, can merge details into Work Exp. or keep separate) -->
+            <section class="mb-8">
+                 <h2 class="section-title">项目经验 (可选补充)</h2>
+                 <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+                <!-- Example: Could list key projects briefly here -->
+                 <div class="text-sm text-gray-600 space-y-3">
+                     <p><strong>大型在线零售平台前端重构 (<code>React</code>):</strong> 担任技术负责人，实施SSR/ISR，构建组件库，负责性能优化。成果: TTI减少40%, Lighthouse评分提升。</p>
+                     <p><strong>企业级数据可视化分析平台 (<code>Vue 3</code>):</strong> 负责核心模块，封装<code>ECharts</code>组件，实现<code>WebSocket</code>实时数据。成果: 平台成功上线，提升数据分析能力。</p>
+                     <p><strong>高性能实时数据监控 Dashboard (<code>React</code>):</strong> 负责前端架构，开发核心图表，重点解决性能瓶颈(<code>Web Workers</code>, <code>Canvas</code>)。成果: 高性能低延迟，高负载下稳定。</p>
+                     <!-- Add more projects if needed -->
+                 </div>
+             </section>
+
+            <!-- Self Evaluation (Optional section) -->
+            <section>
+                <h2 class="section-title">自我评价 (可选)</h2>
+                 <div class="wavy-separator no-print">
+                     <svg viewBox="0 0 80 10" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 0 5 Q 10 10, 20 5 T 40 5 T 60 5 T 80 5"/>
+                    </svg>
+                </div>
+                <ul class="list-disc list-inside text-gray-700 space-y-1 text-sm">
+                     <li>拥有<strong>8年</strong>丰富Web前端开发经验，计算机专业背景。</li>
+                     <li>精通HTML5/CSS3/JavaScript/TypeScript，熟练掌握响应式布局和移动端适配。</li>
+                     <li>精通<strong><code>React</code></strong>和<strong><code>Vue.js</code></strong>框架，能独立高效完成复杂前端项目。</li>
+                     <li>对<strong>前端性能优化、用户体验、Web可访问性、代码可维护性</strong>有深入理解和丰富实践。</li>
+                     <li>具备良好编码习惯，注重代码质量和团队规范。</li>
+                     <li>具备优秀沟通能力和团队协作精神，能积极融入团队，并能承受一定工作压力。</li>
+                     <li>学习能力强，乐于接受新技术，持续关注行业发展动态。</li>
+                </ul>
+            </section>
+
+        </main>
     </div>
 </body>
 </html> 

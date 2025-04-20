@@ -11,7 +11,7 @@ alwaysApply: false
 ## 发布网站
 在根目录执行git commit，然后执行gitpush将代码推送到远端master分支。
 ## 预览网站
-在浏览器中导航到:https://xihuhaomingbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.github.io/web-resume/{site_folder}
+在浏览器中导航到:https://xihuhaoming.github.io/web-resume//{site_folder}
 
 # 生成网页时注意事项
 - 生成纯静态顶面，不要使用任何js框架，例如react，vue，nextjs
